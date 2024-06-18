@@ -1,6 +1,3 @@
-Sure! Here is a `README.md` file for the `SimpleContract` Solidity smart contract.
-
-```markdown
 # SimpleContract
 
 `SimpleContract` is a basic Solidity smart contract that demonstrates the usage of three essential error handling mechanisms in Solidity: `require()`, `assert()`, and `revert()`. These mechanisms help enforce conditions and handle errors in smart contracts.
