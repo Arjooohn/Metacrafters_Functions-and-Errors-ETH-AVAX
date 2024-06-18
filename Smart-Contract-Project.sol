@@ -24,6 +24,7 @@ contract Voting {
 
     // Function to create a new proposal
     function createProposal(string memory description) public onlyChairperson {
+        require(bytes(description).length > 0, "Proposal description cannot be empty.");
         proposals.push(Proposal({
             description: description,
             voteCount: 0
@@ -37,6 +38,10 @@ contract Voting {
 
         voters[msg.sender] = true;
         proposals[proposalIndex].voteCount += 1;
+
+        // Assert to check internal consistency
+        uint voteCount = proposals[proposalIndex].voteCount;
+        assert(voteCount > 0); // After a vote, the count should always be greater than 0
     }
 
     // Function to get the details of a proposal
@@ -48,6 +53,10 @@ contract Voting {
 
     // Function to get the winning proposal
     function winningProposal() public view returns (uint winningProposalIndex) {
+        if (proposals.length == 0) {
+            revert("No proposals available.");
+        }
+
         uint winningVoteCount = 0;
         for (uint i = 0; i < proposals.length; i++) {
             if (proposals[i].voteCount > winningVoteCount) {
