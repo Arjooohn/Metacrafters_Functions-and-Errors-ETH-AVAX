@@ -17,50 +17,6 @@ The contract contains three functions, each showcasing a different error handlin
 **Purpose:**
 - Ensures the input `x` is within a specified range using the `require()` statement.
 
-**Details:**
-- The function checks if `x` is greater than 0 and less than 100.
-- If the condition is not met, the function execution is reverted with the message: "Input must be between 1 and 99."
-
-```solidity
-function requireCheck(uint x) public pure {
-    require(x > 0 && x < 100, "Input must be between 1 and 99.");
-}
-```
-
-### 2. assertCheck(uint y)
-
-**Purpose:**
-- Verifies an internal condition using the `assert()` statement.
-
-**Details:**
-- The function calculates `result` as `y * 2`.
-- It then asserts that `result` is greater than `y`.
-- If the condition fails, indicating a bug, the transaction is reverted.
-
-```solidity
-function assertCheck(uint y) public pure {
-    uint result = y * 2;
-    assert(result > y); // This should always be true for non-zero y
-}
-```
-
-### 3. revertCheck(uint z)
-
-**Purpose:**
-- Explicitly handles an error case using the `revert()` statement.
-
-**Details:**
-- The function checks if `z` is zero.
-- If `z` is zero, it reverts the transaction with the message: "Input must be non-zero."
-
-```solidity
-function revertCheck(uint z) public pure {
-    if (z == 0) {
-        revert("Input must be non-zero.");
-    }
-}
-```
-
 ## How to Run the Contract
 
 To deploy and interact with the contract, you can use [Remix IDE](https://remix.ethereum.org/). Here are the steps:
