@@ -1,6 +1,6 @@
-# SimpleContract
+# Smart-Contract-Project
 
-`SimpleContract` is a basic Solidity smart contract that demonstrates the usage of three essential error handling mechanisms in Solidity: `require()`, `assert()`, and `revert()`. These mechanisms help enforce conditions and handle errors in smart contracts.
+`Smart-Contract-Project` is a basic Solidity smart contract that demonstrates the usage of three essential error handling mechanisms in Solidity: `require()`, `assert()`, and `revert()`. These mechanisms help enforce conditions and handle errors in smart contracts.
 
 ## Contract Overview
 
@@ -25,13 +25,13 @@ To deploy and interact with the contract, you can use [Remix IDE](https://remix.
 Navigate to [Remix IDE](https://remix.ethereum.org/).
 
 ### Step 2: Create and Paste the Contract Code
-1. Create a new file named `SimpleContract.sol`.
+1. Create a new file named `Smart-Contract-Project.sol`.
 2. Copy and paste the provided contract code into this file.
 
 ### Step 3: Compile the Contract
 1. Click on the `Solidity Compiler` tab on the left sidebar.
 2. Ensure the compiler version is set to `0.8.18`.
-3. Click `Compile SimpleContract.sol`.
+3. Click `Compile Smart-Contract-Project.sol`.
 
 ### Step 4: Deploy the Contract
 1. Click on the `Deploy & Run Transactions` tab on the left sidebar.
