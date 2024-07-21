@@ -43,8 +43,3 @@ Navigate to [Remix IDE](https://remix.ethereum.org/).
    - `requireCheck(uint x)` by entering a value and clicking `transact`.
    - `assertCheck(uint y)` by entering a value and clicking `call`.
    - `revertCheck(uint z)` by entering a value and clicking `call`.
-
-## License
-
-This project is licensed under the MIT License.
-```
