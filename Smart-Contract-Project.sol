@@ -1,48 +1,48 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-contract Calculator {
+contract MathOperations {
     // Addition
-    function add(uint256 a, uint256 b) public pure returns (uint256) {
-        uint256 sum = a + b;
+    function calculateSum(uint256 num1, uint256 num2) public pure returns (uint256) {
+        uint256 result = num1 + num2;
         // Check for overflow
-        assert(sum >= a);
-        return sum;
+        assert(result >= num1);
+        return result;
     }
 
     // Subtraction
-    function subtract(uint256 a, uint256 b) public pure returns (uint256) {
+    function calculateDifference(uint256 minuend, uint256 subtrahend) public pure returns (uint256) {
         // Ensure no underflow
-        if (b > a) {
-            revert("Subtraction underflow: second number is greater than the first number.");
+        if (subtrahend > minuend) {
+            revert("Subtraction underflow: the subtrahend is greater than the minuend.");
         }
-        uint256 difference = a - b;
-        return difference;
+        uint256 result = minuend - subtrahend;
+        return result;
     }
 
     // Multiplication
-    function multiply(uint256 a, uint256 b) public pure returns (uint256) {
-        if (a == 0 || b == 0) {
+    function calculateProduct(uint256 factor1, uint256 factor2) public pure returns (uint256) {
+        if (factor1 == 0 || factor2 == 0) {
             return 0;
         }
-        uint256 product = a * b;
+        uint256 result = factor1 * factor2;
         // Check for overflow
-        assert(product / a == b);
-        return product;
+        assert(result / factor1 == factor2);
+        return result;
     }
 
     // Division
-    function divide(uint256 a, uint256 b) public pure returns (uint256) {
+    function calculateQuotient(uint256 dividend, uint256 divisor) public pure returns (uint256) {
         // Ensure no division by zero
-        require(b != 0, "Division by zero is not allowed.");
-        uint256 quotient = a / b;
-        return quotient;
+        require(divisor != 0, "Division by zero is not allowed.");
+        uint256 result = dividend / divisor;
+        return result;
     }
     
     // Modulus
-    function mod(uint256 a, uint256 b) public pure returns (uint256) {
+    function calculateRemainder(uint256 dividend, uint256 divisor) public pure returns (uint256) {
         // Ensure no division by zero
-        require(b != 0, "Division by zero is not allowed.");
-        return a % b;
+        require(divisor != 0, "Division by zero is not allowed.");
+        return dividend % divisor;
     }
 }
